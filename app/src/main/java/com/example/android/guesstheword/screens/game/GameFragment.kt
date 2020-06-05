@@ -57,6 +57,8 @@ class GameFragment : Fragment() {
 
         //let the binding know about the viewModel
         binding.gameViewModel = viewModel
+        //set the fragment to be lifecycle owner
+        binding.setLifecycleOwner(this)
 
 
         viewModel.score.observe(this, Observer { newScore ->

@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 
 class GameViewModel: ViewModel() {
 
-    //companion object members can be call without the instance of the class
+    //companion object members can be called without the instance of the class
     companion object {
         // These represent different important times
         // This is when the game is over
@@ -41,7 +41,7 @@ class GameViewModel: ViewModel() {
     // The list of words - the front of the list is the next word to guess
     private lateinit var wordList: MutableList<String>
 
-
+    //init block is called every time a class is instantiated
     init {
         Log.i("GameViewModel","GameViewModel created!")
        // _gameFinish.value = false
@@ -51,13 +51,13 @@ class GameViewModel: ViewModel() {
         nextWord()
         _score.value = 0
 
+        //initialising the timer
         timer = object :CountDownTimer(COUNTDOWN_TIME, ONE_SECOND){
             override fun onTick(millisUntilFinished: Long) {
                 _currentTime.value = (millisUntilFinished / ONE_SECOND)
-
-
             }
 
+            //called when game is finished
             override fun onFinish() {
                 _currentTime.value = DONE
                 _gameFinish.value = true
