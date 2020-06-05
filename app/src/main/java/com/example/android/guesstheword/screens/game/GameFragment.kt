@@ -60,15 +60,12 @@ class GameFragment : Fragment() {
         //set the fragment to be lifecycle owner
         binding.setLifecycleOwner(this)
 
-
-        viewModel.score.observe(this, Observer { newScore ->
-            binding.scoreText.text = newScore.toString()
-        })
+        
 
         // text observer
-        viewModel.word.observe(this, Observer { newWord ->
-            binding.wordText.text = newWord.toString()
-        })
+//        viewModel.word.observe(this, Observer { newWord ->
+//            binding.wordText.text = newWord.toString()
+//        })
         //game finished observer
         viewModel.eventGameFinished.observe(this, Observer { hasFinished ->
             if (hasFinished){
