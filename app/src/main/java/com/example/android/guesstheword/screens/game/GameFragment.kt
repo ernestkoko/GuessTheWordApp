@@ -60,7 +60,7 @@ class GameFragment : Fragment() {
         //set the fragment to be lifecycle owner
         binding.setLifecycleOwner(this)
 
-        
+
 
         // text observer
 //        viewModel.word.observe(this, Observer { newWord ->
@@ -75,9 +75,9 @@ class GameFragment : Fragment() {
 
         })
         //timer
-        viewModel.currentTime.observe(this, Observer { newTime ->
-            binding.timerText.text = DateUtils.formatElapsedTime(newTime)
-        })
+//        viewModel.currentTime.observe(this, Observer { newTime ->
+//            binding.timerText.text = DateUtils.formatElapsedTime(newTime)
+//        })
 
 
 
